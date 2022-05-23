@@ -1,77 +1,71 @@
 <mat-nav-list dense>
-     <!-- home-->
-     <a mat-list-item [routerLink]="['']">
-          <span mat-line><span class="mat-h4">Home</span> </span>
-          <img matListAvatar src="https://cdn-icons-png.flaticon.com/512/609/609803.png" alt="">
-     </a>
-     <mat-divider class="mt-2"> </mat-divider>
-
-     <div>
 
 
+     <mat-button-toggle-group vertical class="w-100">
+          <!-- home-->
+          <a mat-list-item [routerLink]="['']">
+               <img matListAvatar width="50" src="https://cdn-icons-png.flaticon.com/512/609/609803.png" alt="">
+               <span mat-line><span class="mat-h4">Home</span> </span>
+          </a>
+          <mat-divider class="mt-2"> </mat-divider>
+          <div class="row d-flex align-items-end">
+               <mat-button-toggle class="btn-menu w-100" mat-button onclick="if(document.getElementById('pr1') .style.display=='none') {
+                    document.getElementById('pr1') .style.display=''
+                    }else{
+                         document.getElementById('pr1') .style.display='none'
+                    } " (click)="menuClick1()" title="Click to show/hide" type="mat-button-toggle">
+                    <div class=" w-100 h-100 d-flex justify-content-between">
+                         <p >PR</p>
+                         <mat-icon>{{ico}}</mat-icon>
+                    </div>
 
-     </div>
-    
-     <div >
-          <button class="btn-menu w-100" mat-button
-               onclick="if(document.getElementById('pr1') .style.display=='none') {
-               document.getElementById('pr1') .style.display=''
-               }else{
-                    document.getElementById('pr1') .style.display='none'
-               } "
-               (click)="menuClick1()"
-               title="Click to show/hide" type="button">
-               <div class="d-flex justify-content-between">
-                    <p class="">PR</p>  
-                    <mat-icon >{{ico}}</mat-icon>
-               </div>
-               
-               
-     </button>
- 
-     <div id="pr1" style="display: none;" >
-          <button class="w-100 btn-menu " [routerLink]="['home']" mat-button color="primary" type="button">
-               <p class=" px-2">PR-n</p> 
-          </button>
-     </div>
-     <br />
-     </div>
-     <!---->
-     <div >
-          <button class="btn-menu w-100" mat-button
-          onclick="if(document.getElementById('pr2') .style.display=='none') {
-               document.getElementById('pr2') .style.display=''
-               }else{
-                    document.getElementById('pr2') .style.display='none'
-               } " type="button" (click)="menuClick2()">
-           <div class="d-flex justify-content-between">
-               <p class="">PR2</p>  
-               <mat-icon >{{ico2}}</mat-icon>
+
+               </mat-button-toggle>
           </div>
-     </button>
-
-     <div id="pr2" style="display: none;" >
-          <button class="w-100 btn-menu "  mat-button color="primary"
-               onclick="if(document.getElementById('pr2-2') .style.display=='none') {
+          <div class="row" id="pr1" style="display: none;">
+               <mat-button-toggle class="w-100 dbtn-inmenu " [routerLink]="['pr/home-n']" mat-button
+                    type="mat-button-toggle">
+                    <p class="text-inmenu">PR-n</p>
+               </mat-button-toggle>
+               <mat-button-toggle class="w-100 btn-menu " [routerLink]="['pr/home-n']" mat-button
+                    type="mat-button-toggle">
+                    <p class="text-inmenu">PR-p</p>
+               </mat-button-toggle>
+          </div>
+          <mat-divider></mat-divider>
+          <!---->
+          <div class="row">
+               <mat-button-toggle class="btn-menu w-100" mat-mat-button-toggle onclick="if(document.getElementById('pr2') .style.display=='none') {
+                    document.getElementById('pr2') .style.display=''
+                    }else{
+                         document.getElementById('pr2') .style.display='none'
+                    } " type="mat-button-toggle" (click)="menuClick2()">
+                    <div class="d-flex justify-content-between">
+                         <p class="">PR2</p>
+                         <mat-icon>{{ico2}}</mat-icon>
+                    </div>
+               </mat-button-toggle>
+          </div>
+          <div class="row" id="pr2" style="display: none;">
+               <mat-button-toggle class="w-100 btn-menu " mat-button color="primary" onclick="if(document.getElementById('pr2-2') .style.display=='none') {
                document.getElementById('pr2-2') .style.display=''
                }else{
                     document.getElementById('pr2-2') .style.display='none'
-               } " type="button" (click)="menuClick3()" >
-              <div class="d-flex justify-content-between">
-               <p class="px-2">check</p>  
-               <mat-icon >{{ico3}}</mat-icon>
-          </div>
-          </button>
-          <div id="pr2-2" style="display: none;" >
-               <button class="w-100 btn-menu " [routerLink]="['home']" mat-button color="primary">
-                   <p class="px-3">PR-n</p> 
-               </button>
-          </div>
-     </div>
+               } " type="mat-button-toggle" (click)="menuClick3()">
+                    <div class="d-flex justify-content-between">
+                         <p class="text-inmenu">Check</p>
+                         <mat-icon>{{ico3}}</mat-icon>
+                    </div>
+               </mat-button-toggle>
 
-     <br />
-     </div>
-   <button mat-raised-button class="w-100" onclick="
-   if(document.getElementById('pic1'))"></button>
+          </div>
+          <div class="row" id="pr2-2" style="display: none;">
+               <mat-button-toggle class="w-100 btn-menu " [routerLink]="['pr/home-n/pr-n-add']" mat-button
+                    color="primary">
+                    <p class="text-ininmenu">PR-n</p>
+               </mat-button-toggle>
+          </div>
+     </mat-button-toggle-group>
+
 
 </mat-nav-list>

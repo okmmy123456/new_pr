@@ -17,11 +17,25 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatTreeModule} from '@angular/material/tree';
+import {MatCardModule} from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatSelectModule} from '@angular/material/select';
+import {FormsModule} from '@angular/forms';
+
 
 import { HeaderComponent } from './pr/header/header.component';
 import { SidenavComponent } from './pr/sidenav/sidenav.component';
 import { HomeComponent } from './pr/home/home.component';
-import { PrNHomeComponent } from './pr/pr-nomal/pr-n-home/pr-n-home.component';
+import { PrNHomeComponent } from './pr-nomal/pr-n-home/pr-n-home.component';
+import { MainPrNComponent } from './pr-nomal/main-pr-n/main-pr-n.component';
+import { DetailPrNComponent } from './pr-nomal/detail-pr-n/detail-pr-n.component';
+import { UploadPrNComponent } from './pr-nomal/upload-pr-n/upload-pr-n.component';
+import { HeaderPrNComponent } from './pr-nomal/header-pr-n/header-pr-n.component';
+
 ;
 
 @NgModule({
@@ -31,6 +45,11 @@ import { PrNHomeComponent } from './pr/pr-nomal/pr-n-home/pr-n-home.component';
     SidenavComponent,
     HomeComponent,
     PrNHomeComponent,
+    MainPrNComponent,
+    DetailPrNComponent,
+    UploadPrNComponent,
+    HeaderPrNComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -46,7 +65,16 @@ import { PrNHomeComponent } from './pr/pr-nomal/pr-n-home/pr-n-home.component';
     MatMenuModule,
     MatListModule,
     MatDividerModule,
-    MatTreeModule
+    MatTreeModule,
+    MatCardModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatTabsModule,
+    MatButtonToggleModule,
+    MatAutocompleteModule,
+    MatSelectModule,
+    FormsModule
+
 
   ],
   providers: [],

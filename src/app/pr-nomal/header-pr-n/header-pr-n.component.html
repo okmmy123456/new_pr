@@ -1,0 +1,14 @@
+<mat-form-field  appearance="fill">
+     <mat-label>name</mat-label>
+     <input matInput type="text" [(ngModel)]="name" (keyup)="onKeyUp($event)">
+</mat-form-field>
+name com1:{{name}}
+
+<p>
+header : {{count}}
+</p>
+<button (click)="_onReset()">
+     reset
+</button>
+
+<button (click)="_onSetName()"> Chang name </button>
