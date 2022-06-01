@@ -1,0 +1,120 @@
+<mat-card>
+     <form [formGroup]="project_code" (ngSubmit)="onSubmit()">
+
+          <mat-card-title> สร้างรหัส Project</mat-card-title>
+          <mat-card-subtitle> กรุณากรอกข้อมูลให้ครบถ้วน</mat-card-subtitle>
+          <mat-card-content>
+               <!-- username password-->
+               <div class="row">
+                    <div class="col-lg-6">
+                         <mat-form-field class="w-100" appearance="fill">
+                              <mat-label>username</mat-label>
+                              <input formControlName="username" name="username" matInput required>
+                         </mat-form-field>
+                    </div>
+                    <div class="col-lg-6">
+                         <mat-form-field class="w-100" appearance="fill">
+                              <mat-label>password</mat-label>
+                              <input formControlName="pass" name="pass" matInput [type]="hide ? 'password' : 'text'" required>
+                              <button mat-icon-button matSuffix (click)="hide = !hide"
+                                   [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                   <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                              </button>
+                         </mat-form-field>
+                    </div>
+               </div>
+               <!-- Name -->
+               <div class="row">
+                    <div class="col-lg-6">
+                         <mat-form-field class="w-100" appearance="fill">
+                              <mat-label>your name</mat-label>
+                              <input matInput formControlName="name" name="name">
+                         </mat-form-field>
+                    </div>
+               </div>
+               <!-- site dept-->
+               <div class="row">
+                    <div class="col-lg-6">
+                         <mat-form-field class="w-100" appearance="fill">
+                              <mat-label>site</mat-label>
+                              <input matNativeControl matInput matNativeControl required
+                              [matAutocomplete]="site" formControlName="site" type="text" id="site" name="site">
+                          <mat-autocomplete #site="matAutocomplete">
+                                   <mat-option *ngFor="let site of filtered_site | async" [value]="site.site">
+     
+                                        <span>{{site.sitename}}</span>
+                                        <small>Site: {{site.site}}</small>
+                                   </mat-option>
+                              </mat-autocomplete>
+                         </mat-form-field>
+                    </div>
+                    <div class="col-lg-6">
+                         <mat-form-field class="w-100" appearance="fill">
+                              <mat-label>section</mat-label>
+                              <input matNativeControl formControlName="dept" matInput matNativeControl required
+                              [matAutocomplete]="section" ngModel type="text" id="section" name="dept">
+                          <mat-autocomplete #section="matAutocomplete">
+                                   <mat-option *ngFor="let section of filtered_section | async" [value]="section.section">
+     
+                                        <span>{{section.sectionname}}</span> |
+                                        <small>Section: {{section.section}}</small>
+                                   </mat-option>
+                              </mat-autocomplete>
+                         </mat-form-field>
+                    </div>
+                   
+                   
+               </div>
+
+               <!-- operation  position-->
+               <div class="row">
+                    <div class="col-lg-6">
+                         <mat-form-field class="w-100" appearance="fill">
+                              <mat-label>your operation</mat-label>
+                              <input matInput formControlName="operation" name="operation">
+                         </mat-form-field>
+                    </div>
+                    <div class="col-lg-6">
+                         <mat-form-field class="w-100" appearance="fill">
+                              <mat-label>your position</mat-label>
+                              <input matInput formControlName="position" name="position">
+                         </mat-form-field>
+                    </div>
+               </div>
+                <!-- tel  -->
+                <div class="row">
+                    <div class="col-lg-6">
+                         <mat-form-field class="w-100" appearance="fill">
+                              <mat-label>your tel</mat-label>
+                              <input type="number" formControlName="tel" matInput ngModel name="tel">
+                         </mat-form-field>
+                    </div>
+                  
+               </div>
+               <!-- email  -->
+               <div class="row">
+                    <div class="col-lg-6">
+                         <mat-form-field class="w-100" appearance="fill">
+                              <mat-label>email@org.com</mat-label>
+                              <input type="email" formControlName="email" name="email" matInput required>
+                              
+                         </mat-form-field>
+                    </div>
+               </div>
+               <!-- buyyer -->
+               <div class="row">
+                    <div class="col-lg-6">
+                         <mat-form-field class="w-100" appearance="fill">
+                              <mat-label>your buyer</mat-label>
+                              <input formControlName="codebuyer" name="codebuyer" matInput required>
+                         </mat-form-field>
+                    </div>
+               </div>
+          </mat-card-content>
+          <mat-card-actions>
+               <button mat-button type="submit" class="btn-button"[disabled]="this.project_code.invalid"> Save </button>
+               <button mat-button type="submit" class="btn-button" [routerLink]="['/mastar/code-project-home']"> Cancel </button>
+          </mat-card-actions>
+
+     </form>
+</mat-card>

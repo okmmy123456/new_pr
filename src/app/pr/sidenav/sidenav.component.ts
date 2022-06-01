@@ -13,30 +13,53 @@ import { asapScheduler } from 'rxjs';
 export class SidenavComponent implements OnInit {
 
   prmenu1 : string = "> PR"
+  menutest : number = 0;
+  menu0 : number = 0;
   menu1 : number = 0;
   menu2 : number = 0;
   menu3 : number = 0;
+  menu4 : number = 0;
 
-  ico : string ="navigate_next"
+  icotest : string ="navigate_next"
+  ico0 : string ="navigate_next"
+  ico1 : string ="navigate_next"
   ico2 : string ="navigate_next"
   ico3 : string ="navigate_next"
+  ico4 : string ="navigate_next"
 
+  btntest = false
 
 
   constructor() { 
  
   }
-
   ngOnInit(): void {
+    
   }
-
+  menutestbtn(){
+    if(this.btntest == false){
+      this.btntest=true
+    }else{
+      this.btntest = false
+    }
+  }
+  menuClick0(){
+    if(this.menu0==0){
+        this.menu0=1
+        this.ico0="expand_more"
+      }else{
+        this.menu0=0
+        this.ico0="navigate_next"
+      }
+     
+  }
   menuClick1(){
     if(this.menu1==0){
         this.menu1=1
-        this.ico="expand_more"
+        this.ico1="expand_more"
       }else{
         this.menu1=0
-        this.ico="navigate_next"
+        this.ico1="navigate_next"
       }
   }
 
@@ -59,8 +82,25 @@ export class SidenavComponent implements OnInit {
         this.ico3="navigate_next"
       }
   }
- 
- 
+
+  menuClick4(){
+    if(this.menu4==0){
+        this.menu4=1
+        this.ico4="expand_more"
+      }else{
+        this.menu4=0
+        this.ico4="navigate_next"
+      }
+  }
+  menuClicktest(){
+    if(this.menutest==0){
+        this.menutest=1
+        this.icotest="expand_more"
+      }else{
+        this.menutest=0
+        this.icotest="navigate_next"
+      }
+  }
 }
 
 

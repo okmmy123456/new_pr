@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Inject, Input, OnInit, Output } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-header',
@@ -13,12 +14,15 @@ export class HeaderComponent implements OnInit {
   demoMailNoti = 50;
   demoNoti = 20;
   
-  constructor() { }
+  constructor(@Inject(forwardRef(()=>AppComponent)) private main:AppComponent) { }
 
   ngOnInit(): void {
   }
   onClickNavToggle(){
     this.navToggle.emit();
     this.sayhi.emit("beby to mom");
+  }
+  onLogout(){
+    this.main.activateLogin = false
   }
 }

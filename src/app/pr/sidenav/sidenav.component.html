@@ -1,52 +1,77 @@
 <mat-nav-list dense>
-
-
      <mat-button-toggle-group vertical class="w-100">
           <!-- home-->
           <a mat-list-item [routerLink]="['']">
                <img matListAvatar width="50" src="https://cdn-icons-png.flaticon.com/512/609/609803.png" alt="">
-               <span mat-line><span class="mat-h4">Home</span> </span>
+               <span mat-line><span class="mat-h4 button">Home</span> </span>
           </a>
           <mat-divider class="mt-2"> </mat-divider>
+          <!--menu1-->
+
           <div class="row d-flex align-items-end">
                <mat-button-toggle class="btn-menu w-100" mat-button onclick="if(document.getElementById('pr1') .style.display=='none') {
                     document.getElementById('pr1') .style.display=''
                     }else{
                          document.getElementById('pr1') .style.display='none'
                     } " (click)="menuClick1()" title="Click to show/hide" type="mat-button-toggle">
-                    <div class=" w-100 h-100 d-flex justify-content-between">
-                         <p >PR</p>
-                         <mat-icon>{{ico}}</mat-icon>
+                    <div class=" w-100 h-100 d-flex align-items-center justify-content-between">
+                         ขอเปิด PR
+                         <mat-icon>{{ico1}}</mat-icon>
                     </div>
 
 
                </mat-button-toggle>
           </div>
           <div class="row" id="pr1" style="display: none;">
-               <mat-button-toggle class="w-100 dbtn-inmenu " [routerLink]="['pr/home-n']" mat-button
+               <mat-button-toggle class="w-100 h-25 dbtn-inmenu " [routerLink]="['mastar/code-project-home']" mat-button
                     type="mat-button-toggle">
-                    <p class="text-inmenu">PR-n</p>
+                    <p class="text-inmenu ">1.1 รหัส Project</p>
                </mat-button-toggle>
                <mat-button-toggle class="w-100 btn-menu " [routerLink]="['pr/home-n']" mat-button
                     type="mat-button-toggle">
-                    <p class="text-inmenu">PR-p</p>
+                    <p class="text-inmenu">1.1A แก้ไขรายละเอียด Project</p>
+               </mat-button-toggle>
+               <mat-button-toggle class="w-100 btn-menu " [routerLink]="['pr/home-n']" mat-button
+                    type="mat-button-toggle">
+                    <p class="text-inmenu">1.2 PR ทั่วไป</p>
+               </mat-button-toggle>
+               <mat-button-toggle class="w-100 btn-menu " [routerLink]="['pr/home-n']" mat-button
+                    type="mat-button-toggle">
+                    <p class="text-inmenu">1.3 PR Project </p>
+               </mat-button-toggle>
+               <mat-button-toggle class="w-100 btn-menu " [routerLink]="['pr/home-n']" mat-button
+                    type="mat-button-toggle">
+                    <p class="text-inmenu">1.4 PR Supply</p>
+               </mat-button-toggle>
+               <mat-button-toggle class="w-100 btn-menu " [routerLink]="['pr/home-n']" mat-button
+                    type="mat-button-toggle">
+                    <p class="text-inmenu">1.5 ตรวจสอบ PR </p>
+               </mat-button-toggle>
+               <mat-button-toggle class="w-100 btn-menu " [routerLink]="['pr/home-n']" mat-button
+                    type="mat-button-toggle">
+                    <p class="text-inmenu">1.6 อนุมัติ PR </p>
+               </mat-button-toggle>
+               <mat-button-toggle class="w-100 btn-menu " [routerLink]="['pr/home-n']" mat-button
+                    type="mat-button-toggle">
+                    <p class="text-inmenu">1.7 ตรวจสอบสถานะและติดตาม PR </p>
                </mat-button-toggle>
           </div>
           <mat-divider></mat-divider>
-          <!---->
+          <!--menu 2-->
           <div class="row">
                <mat-button-toggle class="btn-menu w-100" mat-mat-button-toggle onclick="if(document.getElementById('pr2') .style.display=='none') {
                     document.getElementById('pr2') .style.display=''
                     }else{
                          document.getElementById('pr2') .style.display='none'
                     } " type="mat-button-toggle" (click)="menuClick2()">
-                    <div class="d-flex justify-content-between">
-                         <p class="">PR2</p>
+                    <div class="d-flex align-items-center justify-content-between">
+                         จัดหา
                          <mat-icon>{{ico2}}</mat-icon>
                     </div>
                </mat-button-toggle>
           </div>
-          <div class="row" id="pr2" style="display: none;">
+          <!--
+               <div class="row" id="pr2" style="display: none;">
                <mat-button-toggle class="w-100 btn-menu " mat-button color="primary" onclick="if(document.getElementById('pr2-2') .style.display=='none') {
                document.getElementById('pr2-2') .style.display=''
                }else{
@@ -65,7 +90,100 @@
                     <p class="text-ininmenu">PR-n</p>
                </mat-button-toggle>
           </div>
+     
+          -->
+
+          <div class="row" id="pr2" style="display: none;">
+               <mat-button-toggle class="w-100 btn-inmenu " [routerLink]="['pr/home-n']" mat-button
+                    type="mat-button-toggle">
+                    <p class="text-inmenu">2.1 PR ที่มอบหมาย</p>
+               </mat-button-toggle>
+               <mat-button-toggle class="w-100 btn-inmenu " [routerLink]="['pr/home-n']" mat-button
+                    type="mat-button-toggle">
+                    <p class="text-inmenu">2.2 รับทราบ PR ที่มอบหมาย</p>
+               </mat-button-toggle>
+               <mat-button-toggle class="w-100 btn-inmenu " [routerLink]="['pr/home-n']" mat-button
+                    type="mat-button-toggle">
+                    <p class="text-inmenu">2.3 PR สรุปที่จัดหา</p>
+               </mat-button-toggle>
+               <mat-button-toggle class="w-100 btn-inmenu " [routerLink]="['pr/home-n']" mat-button
+                    type="mat-button-toggle">
+                    <p class="text-inmenu">2.4 รอพิจารณา PR</p>
+               </mat-button-toggle>
+               <mat-button-toggle class="w-100 btn-inmenu " [routerLink]="['pr/home-n']" mat-button
+                    type="mat-button-toggle">
+                    <p class="text-inmenu">2.5 รออนุมัติ PR </p>
+               </mat-button-toggle>
+          </div>
+          <mat-divider></mat-divider>
+          <!-- menu 3 -->
+          <div class="row">
+               <mat-button-toggle class="btn-menu w-100" mat-mat-button-toggle onclick="if(document.getElementById('pr3') .style.display=='none') {
+                    document.getElementById('pr3') .style.display=''
+                    }else{
+                         document.getElementById('pr3') .style.display='none'
+                    } " type="mat-button-toggle" (click)="menuClick3()">
+                    <div class="d-flex align-items-center justify-content-between">
+                         ตรวจสอบงบประมาณ
+                         <mat-icon>{{ico3}}</mat-icon>
+                    </div>
+               </mat-button-toggle>
+          </div>
+          <div class="row" id="pr3" style="display: none;">
+               <mat-button-toggle class="w-100 btn-inmenu " [routerLink]="['pr/home-n']" mat-button
+                    type="mat-button-toggle">
+                    <p class="text-inmenu">3.1รอตรวจสอบ PR Project </p>
+               </mat-button-toggle>
+          </div>
+          <mat-divider></mat-divider>
+          <!--menu 4-->
+          <div class="row">
+               <mat-button-toggle class="btn-menu w-100" mat-mat-button-toggle onclick="if(document.getElementById('pr4') .style.display=='none') {
+                    document.getElementById('pr4') .style.display=''
+                    }else{
+                         document.getElementById('pr4') .style.display='none'
+                    } " type="mat-button-toggle" (click)="menuClick4()">
+                    <div class="d-flex align-items-center justify-content-between">
+                         ตรวจสอบงบประมาณ
+                         <mat-icon>{{ico4}}</mat-icon>
+                    </div>
+               </mat-button-toggle>
+          </div>
+          <div class="row" id="pr4" style="display: none;">
+               <mat-button-toggle class="w-100 btn-inmenu " [routerLink]="['pr/home-n']" mat-button
+                    type="mat-button-toggle">
+                    <p class="text-inmenu">4.1 สร้าง Cim File</p>
+               </mat-button-toggle>
+               <mat-button-toggle class=" btn-inmenu " [routerLink]="['pr/home-n']" mat-button
+                    type="mat-button-toggle">
+                    <p class="text-inmenu p-test">4.2 รายการ PR ที่อนุมัติแล้ว รอออก PO </p>
+               </mat-button-toggle>
+               <mat-button-toggle class="w-100 btn-inmenu " [routerLink]="['pr/home-n']" mat-button
+                    type="mat-button-toggle">
+                    <p class="text-inmenu">4.2 บันทึกรับรายการ PR</p>
+               </mat-button-toggle>
+          </div>
+         
+          <!--test-->
+          <div class="row">
+               <mat-button-toggle class="btn-menu w-100" mat-mat-button-toggle onclick="if(document.getElementById('prtest') .style.display=='none') {
+                    document.getElementById('prtest') .style.display=''
+                    }else{
+                         document.getElementById('prtest') .style.display='none'
+                    } " type="mat-button-toggle" (click)="menuClicktest()">
+                    <div class="d-flex align-items-center justify-content-between">
+                         test
+                         <mat-icon>{{icotest}}</mat-icon>
+                    </div>
+               </mat-button-toggle>
+          </div>
+          <div class="row" id="prtest" style="display: none;">
+               <mat-button-toggle class="w-100 btn-inmenu " [routerLink]="['pr/test']" mat-button
+                    type="mat-button-toggle">
+                    <p class="text-inmenu">test1</p>
+               </mat-button-toggle>
+
+          </div>
      </mat-button-toggle-group>
-
-
+     
 </mat-nav-list>

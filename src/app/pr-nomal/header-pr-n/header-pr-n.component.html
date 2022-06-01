@@ -1,8 +1,13 @@
 <mat-form-field  appearance="fill">
      <mat-label>name</mat-label>
-     <input matInput type="text" [(ngModel)]="name" (keyup)="onKeyUp($event)">
+     <input matInput type="text" [(ngModel)]="name" (keyup)="onKeyUpname($event)">
 </mat-form-field>
-name com1:{{name}}
+<mat-form-field  appearance="fill">
+     <mat-label>name</mat-label>
+     <input matInput type="text" [(ngModel)]="name1" (keyup)="onKeyUpname1($event)">
+</mat-form-field>
+name com1:{{name}}<br>
+name1 com1:{{name1}}
 
 <p>
 header : {{count}}

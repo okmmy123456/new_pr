@@ -65,12 +65,25 @@ mat-button-toggle:hover {
 }
 
 .text-inmenu{
+  padding:0px 0px 0px 20px;
   text-align: left;
-  margin: 10px;
+  white-space: normal;
+  line-height: 20px;
+  margin-top: 20px;
 }
 
 .text-ininmenu{
   text-align: left;
-  margin: 20px;
+  margin: 5px;
 }
 
+p{
+  padding-top: -1px;
+}
+.btn-inmenu{
+  text-align: left;
+}
+
+.mat-button-toggle{
+  height: 20%;
+}

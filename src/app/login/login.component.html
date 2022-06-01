@@ -1,0 +1,48 @@
+<div class="images h-100 ">
+     <div class="h-100 d-flex  justify-content-center align-items-center">
+          <mat-card class="card">
+
+               <div class="h-100 justify-content-center d-flex flex-column align-items-center">
+                    <div class="sign-in d-flex justify-content-center ">SIGN-IN </div>
+                    <mat-icon id="logo">account_circle</mat-icon>
+                    <!--Username-->
+                    <div class="login-form">
+                         <mat-icon id="logo-input">person</mat-icon>
+                         <input placeholder="username" type="text" class="input" id="username">
+                    </div>
+                    <!--Password-->
+                    <div class="login-form">
+                         <mat-icon id="logo-input">lock</mat-icon>
+                         <input placeholder="password" type="password" class="input" id="password">
+                    </div>
+                    <p> forgot password ? <a href="http://172.10.3.18/com/user/" target="_blank">contact admin</a></p>
+
+                    <button type="submit" (click)="onLogin()" class="btn-submit " value="login"> login
+                    </button>
+
+                    
+                   
+               </div>
+
+          </mat-card>
+     </div>
+
+</div>
+
+
+<!--
+
+     <div class="images h-100">
+     <div class="h-100 d-flex  justify-content-center align-items-center">
+          <mat-card  class="w-25 second">
+                    <div class=" d-flex justify-content-center transbox">
+                         <p> login </p>
+                    </div>
+               <button mat-button color="primary" (click)="onLogin() ">
+                    login
+               </button>
+          </mat-card>
+     </div>
+     
+</div>
+-->

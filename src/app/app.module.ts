@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSelectModule} from '@angular/material/select';
 import {FormsModule} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 import { HeaderComponent } from './pr/header/header.component';
@@ -35,8 +37,16 @@ import { MainPrNComponent } from './pr-nomal/main-pr-n/main-pr-n.component';
 import { DetailPrNComponent } from './pr-nomal/detail-pr-n/detail-pr-n.component';
 import { UploadPrNComponent } from './pr-nomal/upload-pr-n/upload-pr-n.component';
 import { HeaderPrNComponent } from './pr-nomal/header-pr-n/header-pr-n.component';
+import { CommainComponent } from './test/commain/commain.component';
+import { Com1Component } from './test/com1/com1.component';
+import { Com2Component } from './test/com2/com2.component';
+import { Com3Component } from './test/com3/com3.component';
+import { LoginComponent } from './login/login.component';
+import { CommainhomeComponent } from './commainhome/commainhome.component';
+import { HomeCodeProjectComponent } from './pr-code-project/home-code-project/home-code-project.component';
+import { CreateCodeProjectComponent } from './pr-code-project/create-code-project/create-code-project.component';
+import { EditCodeProjectComponent } from './pr-code-project/edit-code-project/edit-code-project.component';
 
-;
 
 @NgModule({
   declarations: [
@@ -49,10 +59,21 @@ import { HeaderPrNComponent } from './pr-nomal/header-pr-n/header-pr-n.component
     DetailPrNComponent,
     UploadPrNComponent,
     HeaderPrNComponent,
+    CommainComponent,
+    Com1Component,
+    Com2Component,
+    Com3Component,
+    LoginComponent,
+    CommainhomeComponent,
+    HomeCodeProjectComponent,
+    CreateCodeProjectComponent,
+    EditCodeProjectComponent,
 
   ],
   imports: [
+    CommonModule,
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,

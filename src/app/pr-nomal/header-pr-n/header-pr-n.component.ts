@@ -9,7 +9,9 @@ import { MainPrNComponent } from '../main-pr-n/main-pr-n.component';
 export class HeaderPrNComponent implements OnInit {
   @Input("count_hear1") count =1;
   @Output() onReset = new EventEmitter<number>()
-  name :any
+  @Output() fname = new EventEmitter<string>()
+  name =""
+  name1 = ""
   text = '';
   constructor(@Inject(forwardRef(()=>MainPrNComponent)) private main:MainPrNComponent) { 
     
@@ -23,9 +25,17 @@ export class HeaderPrNComponent implements OnInit {
     this.onReset.emit(0)
   }
   _onSetName(){
-    this.main.namemain = this.name
+ alert(this.name)
   }
-  onKeyUp(x:any) { // appending the updated value to the variable
-    this.name += x.target.value + ' | ';
+  onKeyUpname(x:any) { // appending the updated value to the variable
+   /* this.name += x.target.value ;
+    this.main.namemain = this.name*/
+    this.text += x.target.value;
+    this.fname.emit(this.name)
+    console.log("name1 = ",this.name)
   }
+  onKeyUpname1(x:any) { // appending the updated value to the variable
+     this.text += x.target.value;
+     console.log("name1 = ",this.name1)
+   }
 }

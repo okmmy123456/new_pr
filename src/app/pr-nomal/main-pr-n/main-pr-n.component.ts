@@ -28,8 +28,11 @@ export class MainPrNComponent implements OnInit {
 
 
   onclickRun3(){
-    this.c1.count = this.c1.count+1;
-    this.c2.count1 = this.c2.count1-1;
+    //this.c1.count = this.c1.count+1;
+   // this.c2.count1 = this.c2.count1-1;
 
+  }
+  headername(value:string){
+    this.namemain=value
   }
 }

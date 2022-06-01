@@ -8,6 +8,7 @@ import {MediaMatcher} from '@angular/cdk/layout';
 export class AppComponent {
   title = 'pr_new';
 
+  activateLogin = false
   mobileQueryMax !: MediaQueryList;
 
   private _moblieQueryListener :()=> void;
@@ -24,8 +25,5 @@ export class AppComponent {
   onSayhi(text:String){
     //alert(text)
   }
-  
-  jangtang(){
-  
-  }
+
 }
