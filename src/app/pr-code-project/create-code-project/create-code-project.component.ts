@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { site } from '../../models/site.models';
 import { section } from '../../models/section.models';
@@ -16,6 +16,7 @@ export interface State {
   styleUrls: ['./create-code-project.component.css']
 })
 export class CreateCodeProjectComponent implements OnInit {
+  @ViewChild('myInput') myInput !:ElementRef;
   hide = true;
   code_project !: FormGroup;
 
@@ -85,7 +86,13 @@ export class CreateCodeProjectComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  onHidepass(){
+    if(this.myInput.nativeElement.type === 'password'){
+      this.myInput.nativeElement.type="text"
+    }else{
+      this.myInput.nativeElement.type="password"
+    }
+  }
   get primEmail(){
     return this.project_code.get('email')
     }
