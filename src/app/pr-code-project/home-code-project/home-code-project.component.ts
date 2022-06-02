@@ -35,7 +35,7 @@ export class HomeCodeProjectComponent implements OnInit {
       "dept" :"it",
       "operation" : "jameborn",
       "position" :"undercover",
-      "tel" : "3188",
+      "tel" : 3188,
       "email" : "eiyangwa@gmail.com",
       "buyercode" : "a007z"
     },
@@ -47,7 +47,7 @@ export class HomeCodeProjectComponent implements OnInit {
       "dept" :"aew",
       "operation" : "wwe",
       "position" :"champion",
-      "tel" : "1112",
+      "tel" : 1112,
       "email" : "johncena@gmail.com",
       "buyercode" : "axc1g"
     },
@@ -59,7 +59,7 @@ export class HomeCodeProjectComponent implements OnInit {
       "dept" :"aew",
       "operation" : "wwe",
       "position" :"champion",
-      "tel" : "1150",
+      "tel" : 1150,
       "email" : "therock@gmail.com",
       "buyercode" : "xe2sd"
     }

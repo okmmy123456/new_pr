@@ -6,7 +6,7 @@ export class codeproject {
      dept !:string;
      operation !: string;
      position !:string;
-     tel !: string
+     tel !: number;
      email !: string;
      buyercode !: string;
 }
@@ -19,7 +19,7 @@ export interface codeproject {
      dept :string;
      operation : string;
      position:string;
-     tel : string
+     tel :  number;
      email : string;
      buyercode : string;
    }
