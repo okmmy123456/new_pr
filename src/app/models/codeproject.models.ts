@@ -8,7 +8,7 @@ export class codeproject {
      position !:string;
      tel !: string
      email !: string;
-     codebuyer !: string;
+     buyercode !: string;
 }
 
 export interface codeproject {
@@ -21,5 +21,5 @@ export interface codeproject {
      position:string;
      tel : string
      email : string;
-     codebuyer : string;
+     buyercode : string;
    }

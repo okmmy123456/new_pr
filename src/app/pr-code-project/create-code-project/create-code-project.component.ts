@@ -5,6 +5,7 @@ import { section } from '../../models/section.models';
 import { map, Observable, startWith } from 'rxjs';
 import { codeproject } from 'src/app/models/codeproject.models';
 
+
 export interface State {
   flag: string;
   name: string;
@@ -15,8 +16,13 @@ export interface State {
   templateUrl: './create-code-project.component.html',
   styleUrls: ['./create-code-project.component.css']
 })
+
 export class CreateCodeProjectComponent implements OnInit {
+
   @ViewChild('myInput') myInput !:ElementRef;
+  @ViewChild('mypassword') mypassword !:ElementRef;
+  @ViewChild('Cpassword') Cpassword !:ElementRef;
+  text =""
   hide = true;
   code_project !: FormGroup;
 
@@ -31,24 +37,27 @@ export class CreateCodeProjectComponent implements OnInit {
 
   selectedSectionC = new FormControl('', Validators.required);
   filtered_section: Observable<section[]> | undefined
-  project_code !: FormGroup;
   
+  project_codeForm !: FormGroup;
+  emailFormControl = new FormControl('',[
+    Validators.required,
+    Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"),
+    Validators.email],);
  
   constructor(private fb: FormBuilder) {
-    this.project_code = this.fb.group({
+    this.project_codeForm = this.fb.group({
       username : new FormControl('', Validators.required),
       pass : new FormControl('', Validators.required),
+      cpass : new FormControl('', Validators.required),
       name : new FormControl('', Validators.required),
       site : new FormControl('', Validators.required),
       dept : new FormControl('', Validators.required),
       operation : new FormControl('', Validators.required),
       position : new FormControl('', Validators.required),
-      tel : new FormControl('', Validators.required),
-      email : new FormControl('',[
-        Validators.required,
-        Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
-      codebuyer : new FormControl('', Validators.required),
-    })
+      tel : new FormControl('', [Validators.required,Validators.pattern("[- +()0-9]+")]),
+      email : this.emailFormControl,
+      buyercode : new FormControl('', Validators.required),
+    },{validator: this.checkIfMatchingPasswords('pass', 'cpass')});
 
     this.filteredStates = this.stateCtrl.valueChanges.pipe(
       startWith(''),
@@ -67,6 +76,19 @@ export class CreateCodeProjectComponent implements OnInit {
 
 
   }
+ 
+checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
+  return (group: FormGroup) => {
+    let passwordInput = group.controls[passwordKey],
+        passwordConfirmationInput = group.controls[passwordConfirmationKey];
+    if (passwordInput.value !== passwordConfirmationInput.value) {
+      return passwordConfirmationInput.setErrors({notEquivalent: true})
+    }
+    else {
+        return passwordConfirmationInput.setErrors(null);
+    }
+  }
+}
 
   private _filterStates(value: string): State[] {
     const filterValue = value.toLowerCase();
@@ -86,15 +108,20 @@ export class CreateCodeProjectComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onHidepass(){
-    if(this.myInput.nativeElement.type === 'password'){
-      this.myInput.nativeElement.type="text"
-    }else{
-      this.myInput.nativeElement.type="password"
+
+  conpass(){
+    if(this.mypassword.nativeElement.id === this.Cpassword.nativeElement.id){
+      console.log("password macth")
+    }else {
+      console.log("password not macth")
     }
+    this.text="777"
+    console.log(this.text)
   }
+
+  
   get primEmail(){
-    return this.project_code.get('email')
+    return this.project_codeForm.get('email')
     }
   onSubmit() {
     
@@ -112,9 +139,9 @@ export class CreateCodeProjectComponent implements OnInit {
       position: values.position,
       tel: values.tel,
       email: values.email,
-      codebuyer: values.codebuyer,
+      buyercode: values.buyercode,
     }*/
-    const values = this.project_code.value;
+    const values = this.project_codeForm.value;
     let codeproject : codeproject={
       username: values.username,
       pass: values.pass,
@@ -125,8 +152,9 @@ export class CreateCodeProjectComponent implements OnInit {
       position: values.position,
       tel: values.tel,
       email: values.email,
-      codebuyer: values.codebuyer,
+      buyercode: values.buyercode,
     }
+    
     console.log(JSON.stringify(codeproject));
     console.log(codeproject);
   }
@@ -151,4 +179,5 @@ export class CreateCodeProjectComponent implements OnInit {
       // https://commons.wikimedia.org/wiki/File:Flag_of_Arkansas.svg
       flag: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Arkansas.svg',
     },]
+    
 }

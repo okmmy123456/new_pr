@@ -37,7 +37,7 @@ export class HomeCodeProjectComponent implements OnInit {
       "position" :"undercover",
       "tel" : "3188",
       "email" : "eiyangwa@gmail.com",
-      "codebuyer" : "a007z"
+      "buyercode" : "a007z"
     },
     {
       "username" : "hjerdffqwe",
@@ -49,7 +49,7 @@ export class HomeCodeProjectComponent implements OnInit {
       "position" :"champion",
       "tel" : "1112",
       "email" : "johncena@gmail.com",
-      "codebuyer" : "axc1g"
+      "buyercode" : "axc1g"
     },
     {
       "username" : "qrvdsfasf",
@@ -61,7 +61,7 @@ export class HomeCodeProjectComponent implements OnInit {
       "position" :"champion",
       "tel" : "1150",
       "email" : "therock@gmail.com",
-      "codebuyer" : "xe2sd"
+      "buyercode" : "xe2sd"
     }
   ]
     this.dataSource.data = dummy
