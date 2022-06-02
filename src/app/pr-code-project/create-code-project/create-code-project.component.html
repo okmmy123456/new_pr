@@ -10,7 +10,7 @@
                               <mat-label>Username</mat-label>
                               <input formControlName="username" name="username" matInput required>
                               <mat-error *ngIf="project_codeForm.get('username')?.hasError('required')">
-                                   Please enter your username.
+                                   Please enter your <strong>username.</strong> 
                               </mat-error>
 
                          </mat-form-field>
@@ -28,7 +28,7 @@
                                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                               </button>
                               <mat-error *ngIf="project_codeForm.get('pass')?.hasError('required')">
-                                   Please enter your password.
+                                   Please enter your  <strong>password.</strong>
                               </mat-error>
                          </mat-form-field>
                          <!--
@@ -45,7 +45,7 @@
                                    [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" type="button">
                               </button>
                               <mat-error *ngIf="project_codeForm.value.cpass">
-                                   Passwords do not match.
+                                  <strong>Passwords do not match.</strong> 
                               </mat-error>
                          </mat-form-field>
                     </div>
@@ -55,10 +55,10 @@
                <div class="row">
                     <div class="col-lg-6">
                          <mat-form-field class="w-100" appearance="fill">
-                              <mat-label>your name</mat-label>
+                              <mat-label>Your name</mat-label>
                               <input matInput formControlName="name" name="name">
                               <mat-error *ngIf="project_codeForm.get('name')?.hasError('required')">
-                                   Please enter your name.
+                                   Please enter your <strong>name.</strong> 
                               </mat-error>
                          </mat-form-field>
                     </div>
@@ -67,7 +67,7 @@
                <div class="row">
                     <div class="col-lg-6">
                          <mat-form-field class="w-100" appearance="fill">
-                              <mat-label>site</mat-label>
+                              <mat-label>Site</mat-label>
                               <input matNativeControl matInput matNativeControl required [matAutocomplete]="site"
                                    formControlName="site" type="text" id="site" name="site">
                               <mat-autocomplete #site="matAutocomplete">
@@ -78,15 +78,15 @@
                                    </mat-option>
                               </mat-autocomplete>
                               <mat-error *ngIf="project_codeForm.get('site')?.hasError('required')">
-                                   Please enter your site.
+                                   Please enter your <strong>site.</strong> 
                               </mat-error>
                          </mat-form-field>
                     </div>
                     <div class="col-lg-6">
                          <mat-form-field class="w-100" appearance="fill">
-                              <mat-label>section</mat-label>
+                              <mat-label>Department</mat-label>
                               <input matNativeControl formControlName="dept" matInput matNativeControl required
-                                   [matAutocomplete]="section" type="text" id="section" name="dept">
+                                   [matAutocomplete]="section" type="text" id="section" name="section">
                               <mat-autocomplete #section="matAutocomplete">
                                    <mat-option *ngFor="let section of filtered_section | async"
                                         [value]="section.section">
@@ -94,10 +94,10 @@
                                         <span>{{section.sectionname}}</span> |
                                         <small>Section: {{section.section}}</small>
                                    </mat-option>
-                                   <mat-error *ngIf="project_codeForm.get('section')?.hasError('required')">
-                                        Please enter your department.
-                                   </mat-error>
                               </mat-autocomplete>
+                              <mat-error *ngIf="project_codeForm.get('dept')?.hasError('required')">
+                                   Please enter your <strong>department.</strong> 
+                              </mat-error>
                          </mat-form-field>
                     </div>
                </div>
@@ -105,31 +105,33 @@
                <div class="row">
                     <div class="col-lg-6">
                          <mat-form-field class="w-100" appearance="fill">
-                              <mat-label>your operation</mat-label>
+                              <mat-label>Your operation</mat-label>
                               <input matInput formControlName="operation" name="operation">
+                              <mat-error *ngIf="project_codeForm.get('operation')?.hasError('required')">
+                                   Please enter your <strong>operation.</strong> 
+                              </mat-error>
                          </mat-form-field>
-                         <mat-error *ngIf="project_codeForm.get('operation')?.hasError('required')">
-                              Please enter your department.
-                         </mat-error>
+                         
                     </div>
                     <div class="col-lg-6">
                          <mat-form-field class="w-100" appearance="fill">
-                              <mat-label>your position</mat-label>
+                              <mat-label>Your position</mat-label>
                               <input matInput formControlName="position" name="position">
+                              <mat-error *ngIf="project_codeForm.get('position')?.hasError('required')">
+                                   Please enter your <strong>department.</strong> 
+                              </mat-error>
                          </mat-form-field>
-                         <mat-error *ngIf="project_codeForm.get('position')?.hasError('required')">
-                              Please enter your department.
-                         </mat-error>
+                         
                     </div>
                </div>
                <!-- tel  -->
                <div class="row">
                     <div class="col-lg-6">
                          <mat-form-field class="w-100" appearance="fill">
-                              <mat-label>your tel</mat-label>
+                              <mat-label>Your phone number</mat-label>
                               <input type="tel" formControlName="tel" matInput name="tel">
                               <mat-error *ngIf="project_codeForm.get('tel')?.hasError('required')">
-                                   Please enter your tel
+                                   Please enter your <strong>phone number.</strong> 
                               </mat-error>
                               <mat-error *ngIf="project_codeForm.value.tel">
                                    syntax tel error
@@ -160,12 +162,13 @@
                <div class="row">
                     <div class="col-lg-6">
                          <mat-form-field class="w-100" appearance="fill">
-                              <mat-label>your buyer</mat-label>
+                              <mat-label>Your buyer</mat-label>
                               <input formControlName="buyercode" name="buyercode" matInput required>
+                              <mat-error *ngIf="project_codeForm.get('buyercode')?.hasError('required')">
+                                   Please enter your <strong>buyercode.</strong> 
+                              </mat-error>
                          </mat-form-field>
-                         <mat-error *ngIf="project_codeForm.get('buyercode')?.hasError('required')">
-                              Please enter your buyercode.
-                         </mat-error>
+                      
                     </div>
                </div>
           </mat-card-content>

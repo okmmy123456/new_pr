@@ -155,6 +155,7 @@ checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
       buyercode: values.buyercode,
     }
     
+    console.log("project_codeForm : "+JSON.stringify(this.project_codeForm.value));
     console.log(JSON.stringify(codeproject));
     console.log(codeproject);
   }
