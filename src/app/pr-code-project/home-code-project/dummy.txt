@@ -1,0 +1,38 @@
+ const dummy: codeproject[] = [
+      {
+      "username" : "asdzxcqw",
+      "pass" : "aszx;.,qwe",
+      "name" :"jakraphan traimanee",
+      "site" :"ss",
+      "dept" :"it",
+      "operation" : "jameborn",
+      "position" :"undercover",
+      "tel" : 3188,
+      "email" : "eiyangwa@gmail.com",
+      "buyercode" : "a007z"
+    },
+    {
+      "username" : "hjerdffqwe",
+      "pass" : "adzxczxcasd",
+      "name" :"john cena",
+      "site" :"wwe",
+      "dept" :"aew",
+      "operation" : "wwe",
+      "position" :"champion",
+      "tel" : 1112,
+      "email" : "johncena@gmail.com",
+      "buyercode" : "axc1g"
+    },
+    {
+      "username" : "qrvdsfasf",
+      "pass" : "aschefzf",
+      "name" :"the rock",
+      "site" :"wwe",
+      "dept" :"aew",
+      "operation" : "wwe",
+      "position" :"champion",
+      "tel" : 1150,
+      "email" : "therock@gmail.com",
+      "buyercode" : "xe2sd"
+    }
+  ]
