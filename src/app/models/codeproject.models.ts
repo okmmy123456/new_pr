@@ -11,7 +11,7 @@ export class codeproject {
      buyercode !: string;
 }
 
-export interface codeproject {
+export interface codeprojectResponse {
      username : string;
      pass : string;
      name :string;

@@ -2,7 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { codeproject } from 'src/app/models/codeproject.models';
+import { codeproject, codeprojectResponse } from 'src/app/models/codeproject.models';
+import { NetworkService } from 'src/app/services/network.service';
 @Component({
   selector: 'app-home-code-project',
   templateUrl: './home-code-project.component.html',
@@ -10,14 +11,14 @@ import { codeproject } from 'src/app/models/codeproject.models';
 })
 export class HomeCodeProjectComponent implements OnInit {
 
-  displayedColumns = [ 'username','name','site','dept','name', 'tel','action']
+  displayedColumns = [ 'username','name','site','dept', 'tel','action']
   dataSource = new MatTableDataSource<codeproject>();
-
+  dataDB !: codeprojectResponse[]
   @ViewChild(MatSort, { static: true }) sort !: MatSort
   @ViewChild(MatPaginator, {static :true }) paginator!:MatPaginator
 
   textSearch !: String;
-  constructor() { }
+  constructor(private networkServices:NetworkService) { }
 
   ngOnInit(): void {
     this.dataSource.sort = this.sort
@@ -26,46 +27,25 @@ export class HomeCodeProjectComponent implements OnInit {
   }
 
   feedData() {
-    const dummy: codeproject[] = [
-      {
-      "username" : "asdzxcqw",
-      "pass" : "aszx;.,qwe",
-      "name" :"jakraphan traimanee",
-      "site" :"ss",
-      "dept" :"it",
-      "operation" : "jameborn",
-      "position" :"undercover",
-      "tel" : 3188,
-      "email" : "eiyangwa@gmail.com",
-      "buyercode" : "a007z"
-    },
-    {
-      "username" : "hjerdffqwe",
-      "pass" : "adzxczxcasd",
-      "name" :"john cena",
-      "site" :"wwe",
-      "dept" :"aew",
-      "operation" : "wwe",
-      "position" :"champion",
-      "tel" : 1112,
-      "email" : "johncena@gmail.com",
-      "buyercode" : "axc1g"
-    },
-    {
-      "username" : "qrvdsfasf",
-      "pass" : "aschefzf",
-      "name" :"the rock",
-      "site" :"wwe",
-      "dept" :"aew",
-      "operation" : "wwe",
-      "position" :"champion",
-      "tel" : 1150,
-      "email" : "therock@gmail.com",
-      "buyercode" : "xe2sd"
-    }
-  ]
-    this.dataSource.data = dummy
-  }
+    this.networkServices.getcodeproject()
+      .subscribe(
+        data => {
+          //alert(JSON.stringify(data))
+         // console.log("data = ",JSON.stringify(data))
+         // this.dataDB = data
+          this.dataSource.data = data
+        },
+        error=>{
+          alert(JSON.stringify("Error : "+error.error.message))
+        },
+        ()=>{
+          console.log("feedData success")
+        }
+        
+      )
+     
+} 
+
 
   search(event: Event | null) {
     let fliterValue = '';

@@ -27,7 +27,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSelectModule} from '@angular/material/select';
 import {FormsModule} from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
-
+import {HttpClientModule} from '@angular/common/http';
 
 import { HeaderComponent } from './pr/header/header.component';
 import { SidenavComponent } from './pr/sidenav/sidenav.component';
@@ -73,6 +73,7 @@ import { EditCodeProjectComponent } from './pr-code-project/edit-code-project/ed
   imports: [
     CommonModule,
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
